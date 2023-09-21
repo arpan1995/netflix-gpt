@@ -31,15 +31,13 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           updateProfile(user, {
-            displayName: name.current.value, photoURL: "https://example.com/jane-q-user/profile.jpg"
+            displayName: name.current.value, photoURL: "https://scontent.fblr12-1.fna.fbcdn.net/v/t39.30808-6/311740019_4038619006278798_7349840616437357786_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=52f669&_nc_ohc=f_D_oe9NWYYAX_drbZ9&_nc_ht=scontent.fblr12-1.fna&oh=00_AfABEDtMvKg2dBlrCHNIKOuGELXOdzVdMq61D-QURs8__Q&oe=6511A70A"
           }).then(() => {
-            // Profile updated!
-            // ...
+            navigate('/')
           }).catch((error) => {
-            // An error occurred
-            // ...
+            setErrorMessage(error.message)
           });
-          navigate("/browse");
+          navigate("/");
 
         })
         .catch((error) => {
